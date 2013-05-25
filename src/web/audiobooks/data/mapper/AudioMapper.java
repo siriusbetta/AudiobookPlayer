@@ -3,6 +3,8 @@ package web.audiobooks.data.mapper;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.springframework.jdbc.core.RowMapper;
+
 import web.audiobooks.models.Audio;
 
 
@@ -16,7 +18,7 @@ import web.audiobooks.models.Audio;
  * </p>
  *
  */
-public class AudioMapper {
+public class AudioMapper implements RowMapper<Audio>{
 	/**
 	 * @param ResultSet resultSet, Integer rowNumber
 	 * <p>
@@ -26,7 +28,7 @@ public class AudioMapper {
 	 * @exception SQLException If get exception return NULL
 	 * 
 	 */
-	public Audio mapperRow(ResultSet resultSet, Integer rowNumber){
+	public Audio mapRow(ResultSet resultSet, int rowNumber) throws SQLException{
 	/**
 	 * <p>Creates new object Audio which mapping from table</p>
 	 * @value Audio audio 
@@ -52,5 +54,6 @@ public class AudioMapper {
 		
 		return audio;	
 	}
+
 
 }

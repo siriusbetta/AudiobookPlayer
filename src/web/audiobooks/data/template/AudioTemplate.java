@@ -7,6 +7,7 @@ import javax.sql.DataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import web.audiobooks.data.dao.AudioDao;
+import web.audiobooks.data.mapper.AudioMapper;
 import web.audiobooks.models.Audio;
 
 /**
@@ -45,11 +46,17 @@ public class AudioTemplate implements AudioDao{
 		
 		jdbcTemplate.update(SQL, path, author, length, bookName);
 	}
-
+	
+	
+	/**
+	 * <p>Get record from database by audio Id</p>
+	 * @param Integer audioID
+	 */
 	@Override
 	public Audio getRecord(Integer audioID) {
-		// TODO Auto-generated method stub
-		return null;
+		String SQL = "SELECT * FROM audio WHERE audioID = ?";
+		Audio audio = jdbcTemplate.queryForObject(SQL,new  Object[]{audioID}, new AudioMapper());
+		return audio;
 	}
 
 	@Override
