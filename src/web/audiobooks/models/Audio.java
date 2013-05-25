@@ -6,27 +6,32 @@ package web.audiobooks.models;
  */
 public class Audio {
 	/**
-	 * @value audioID The ID of audio file into the database
+	 * <p>The ID of audio file into the database</p>
+	 * @value Audio audioID 
 	 */
 	private int audioID;
 
 	/**
-	 * @value path - The path is where located file
+	 * <p>The path is where located file</p>
+	 * @value String path
 	 */
 	private String path;
 	
 	/**
-	 * @value The author of the book
+	 * <p>The author of the book</p>
+	 * @value String author 
 	 */
 	private String author;
 	
 	/**
-	 * @value The length of the file
+	 * <p>The length of the file</p>
+	 * @value Double length
 	 */
 	private double length;
 	
 	/**
-	 * The name of the book
+	 * <p>The name of the book</p>
+	 * @value String bookName
 	 */
 	private String bookName;
 	
