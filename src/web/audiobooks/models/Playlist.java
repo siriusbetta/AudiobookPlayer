@@ -1,6 +1,7 @@
 package web.audiobooks.models;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * <p>Data model of user's playlist</p>
@@ -22,6 +23,12 @@ public class Playlist {
 	 * <p>List of user's audio </p>
 	 * @value List<Audio> audio 
 	 */
+	
+	/**
+	 * <p>List of user's audio</p>
+	 * @value List<Audio> audio
+	 */
+	private List<Audio> playlist;
 	
 	/**
 	 * <p>Time of last modification</p>
@@ -46,6 +53,12 @@ public class Playlist {
 	}
 	public void setTimeOfModification(Date timeOfModification) {
 		this.timeOfModification = timeOfModification;
+	}
+	public List<Audio> getPlaylist() {
+		return playlist;
+	}
+	public void setPlaylist(List<Audio> playlist) {
+		this.playlist = playlist;
 	}
 	
 }
