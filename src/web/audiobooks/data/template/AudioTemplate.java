@@ -31,10 +31,19 @@ public class AudioTemplate implements AudioDao{
 		jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 	
+	/**
+	 * <p>Adds to database object Audio</p>
+	 * @param Audio audio 
+	 */
 	@Override
 	public void addRecord(Audio audio) {
-		// TODO Auto-generated method stub
+		String SQL = "INSERT INTO audio (path, author, length, bookName) VALUES (?, ?, ?, ?)";
+		String path = audio.getPath();
+		String author = audio.getAuthor();
+		Double length = audio.getLength();
+		String bookName = audio.getBookName();
 		
+		jdbcTemplate.update(SQL, path, author, length, bookName);
 	}
 
 	@Override
