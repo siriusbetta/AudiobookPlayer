@@ -1,0 +1,16 @@
+insert into audio (path, author, length, bookName) values ('Linda1.mp3', 'Linda', 5.37, 'Северный ветер');
+insert into audio (path, author, length, bookName) values ('Linda2.mp3', 'Linda', 4.49, 'Никогда');
+insert into audio (path, author, length, bookName) values ('Linda3.mp3', 'Linda', 5.31, 'Ворона');
+insert into audio (path, author, length, bookName) values ('Linda4.mp', 'Linda', 5.05, 'Никому тебя не отдам');
+insert into audio (path, author, length, bookName) values ('Aeshen.mp', 'Arabica', 4.20, "A'eshen");
+insert into audio (path, author, length, bookName) values ('Blue_Nile.mp3', 'Arabika', 3.50, 'Blue Nile');
+insert into audio (path, author, length, bookName) values ('Inner_Vision.mp3', 'Arabika', 4.39, 'Inner Vision');
+insert into audio (path, author, length, bookName) values ('Platinum_Sphere.mp3', 'Arabika', 4.11, 'Platinum Sphere');
+insert into audio (path, author, length, bookName) values ('Randa.mp3', 'Arabika', 5.01, 'Randa');
+insert into audio (path, author, length, bookName) values ('San_Sebastian.mp3', 'Arabika', 4.12, 'San Sebastian');
+insert into audio (path, author, length, bookName) values ('Sarajebo.mp3', 'Arabika', 4.13, 'Sarajebo');
+insert into audio (path, author, length, bookName) values ('Somewhere_In_A_Dream.mp3', 'Arabika', 4.09, 'Somewhere In A Dream');
+insert into audio (path, author, length, bookName) values ('Tareg.mp3', 'Arabika', 5.23, 'Tareg');
+insert into audio (path, author, length, bookName) values ('The_Flame.mp3', 'Arabika', 3.58, 'The Flame');
+insert into audio (path, author, length, bookName) values ('The_Mask.mp3', 'Arabika', 4.10, 'The Mask');
+insert into audio (path, author, length, bookName) values ('The_Stone.mp3', 'Arabika', 4.46, 'The Stone And The Rose');
