@@ -38,6 +38,20 @@ public class AudioTemplate implements AudioDao{
 	 */
 	@Override
 	public void addRecord(Audio audio) {
+		/**
+		 * <ul>
+		 * 		<li>SQL query to insert to audio table record</li>
+		 * 		@value String SQL
+		 * 		<li>Get path</li>
+		 * 		@value String path
+		 * 		<li>Get author</li>
+		 * 		@value String author
+		 * 		<li>Get length of audio file</li>
+		 * 		@value Double length
+		 * 		<li>Get book name</li>
+		 * 		@value String bookName
+		 * </ul>
+		 */
 		String SQL = "INSERT INTO audio (path, author, length, bookName) VALUES (?, ?, ?, ?)";
 		String path = audio.getPath();
 		String author = audio.getAuthor();
@@ -55,6 +69,10 @@ public class AudioTemplate implements AudioDao{
 	 */
 	@Override
 	public Audio getRecord(Integer audioID) {
+		/**
+		 * <p>SQL query get from database record by audio ID</p>
+		 * @value String SQL
+		 */
 		String SQL = "SELECT * FROM audio WHERE audioID = ?";
 		Audio audio = jdbcTemplate.queryForObject(SQL,new  Object[]{audioID}, new AudioMapper());
 		return audio;
@@ -68,6 +86,7 @@ public class AudioTemplate implements AudioDao{
 	 */
 	@Override
 	public Audio getRecord(String bookName) {
+		
 		String SQL = "SELECT * FROM audio WHERE bookName = ?";
 		Audio audio = jdbcTemplate.queryForObject(SQL,new  Object[]{bookName}, new AudioMapper());
 		return audio;
@@ -80,6 +99,7 @@ public class AudioTemplate implements AudioDao{
 	 */
 	@Override
 	public List<Audio> getRecords() {
+		
 		String SQL = "SELECT * FROM audio";
 		List<Audio> audio = jdbcTemplate.query(SQL, new AudioMapper());
 		return audio;
