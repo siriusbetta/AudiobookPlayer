@@ -1,0 +1,1 @@
+create table playlist(playlistID int unsignet auto_increment, userID int, audioID int, timeOfModification date) default auto_increment = 1;
