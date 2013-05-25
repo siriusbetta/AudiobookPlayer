@@ -61,20 +61,23 @@ public class AudioTemplate implements AudioDao{
 
 	@Override
 	public Audio getRecord(String bookName) {
-		// TODO Auto-generated method stub
-		return null;
+		String SQL = "SELECT * FROM audio WHERE bookName = ?";
+		Audio audio = jdbcTemplate.queryForObject(SQL,new  Object[]{bookName}, new AudioMapper());
+		return audio;
 	}
 
 	@Override
 	public List<Audio> getRecords() {
-		// TODO Auto-generated method stub
-		return null;
+		String SQL = "SELECT * FROM audio";
+		List<Audio> audio = jdbcTemplate.query(SQL, new AudioMapper());
+		return audio;
 	}
 
 	@Override
 	public List<Audio> getRecordByAuthorName(String authorName) {
-		// TODO Auto-generated method stub
-		return null;
+		String SQL = "SELECT * FROM audio WHERE author = ?";
+		List<Audio> audio = jdbcTemplate.query(SQL, new AudioMapper(), authorName);
+		return audio;
 	}
 
 	@Override
