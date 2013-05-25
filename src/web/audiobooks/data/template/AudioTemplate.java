@@ -51,6 +51,7 @@ public class AudioTemplate implements AudioDao{
 	/**
 	 * <p>Get record from database by audio Id</p>
 	 * @param Integer audioID
+	 * @return Audio audio
 	 */
 	@Override
 	public Audio getRecord(Integer audioID) {
@@ -59,6 +60,12 @@ public class AudioTemplate implements AudioDao{
 		return audio;
 	}
 
+	
+	/**
+	 * <p>Get record from database by book name</p>
+	 * @param String bookName
+	 * @return Audio audio
+	 */
 	@Override
 	public Audio getRecord(String bookName) {
 		String SQL = "SELECT * FROM audio WHERE bookName = ?";
@@ -66,6 +73,11 @@ public class AudioTemplate implements AudioDao{
 		return audio;
 	}
 
+	
+	/**
+	 * <p>Get records all from database</p>
+	 * @return List of Audio audio
+	 */
 	@Override
 	public List<Audio> getRecords() {
 		String SQL = "SELECT * FROM audio";
@@ -73,6 +85,10 @@ public class AudioTemplate implements AudioDao{
 		return audio;
 	}
 
+	/**
+	 * <p>Get records from database by author name Id</p>
+	 * @return List of Audio audio
+	 */
 	@Override
 	public List<Audio> getRecordByAuthorName(String authorName) {
 		String SQL = "SELECT * FROM audio WHERE author = ?";
@@ -80,21 +96,38 @@ public class AudioTemplate implements AudioDao{
 		return audio;
 	}
 
+	
+	/**
+	 * <p>Delete record from audio by audio ID</p>
+	 * @param Integer audioID
+	 */
 	@Override
 	public void delete(Integer audioID) {
-		// TODO Auto-generated method stub
-		
+		String SQL = "DELTE FROM audio WHERE audioID = ?";
+		jdbcTemplate.update(SQL, audioID);		
 	}
 
+	
+	/**
+	 * <p>Delete record from audio by book name</p>
+	 * @param String bookName
+	 */
 	@Override
 	public void delete(String bookName) {
-		// TODO Auto-generated method stub
+		String SQL = "DELTE FROM audio WHERE bookName = ?";
+		jdbcTemplate.update(SQL, bookName);
 		
 	}
 
+	
+	/**
+	 * <p>Delete record from audio by author name</p>
+	 * @param String authorName
+	 */
 	@Override
 	public void deleteByAuthorName(String authorName) {
-		// TODO Auto-generated method stub
+		String SQL = "DELTE FROM audio WHERE author = ?";
+		jdbcTemplate.update(SQL, authorName);
 		
 	}
 
