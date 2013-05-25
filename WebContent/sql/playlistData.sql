@@ -1,1 +1,5 @@
-create table playlist(playlistID int unsignet auto_increment, userID int, audioID int, timeOfModification date) default auto_increment = 1;
+create table playlist(playlistID int unsigned auto_increment primary key,
+userID int,
+audioID int,
+timeOfModification timestamp default current_timestamp
+) auto_increment = 1;
