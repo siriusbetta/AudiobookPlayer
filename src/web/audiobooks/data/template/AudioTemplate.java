@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.springframework.jdbc.core.JdbcTemplate;
+
 import web.audiobooks.data.dao.AudioDao;
 import web.audiobooks.models.Audio;
 
@@ -15,13 +17,20 @@ import web.audiobooks.models.Audio;
  * 
  */
 public class AudioTemplate implements AudioDao{
-
+	
+	DataSource dataSource;
+	JdbcTemplate jdbcTemplate;
+	
+	/**
+	 * @param DataSource dataSource
+	 * <p>Set DataSource into the object</p>
+	 */
 	@Override
 	public void setDataSource(DataSource dataSource) {
-		// TODO Auto-generated method stub
-		
+		this.dataSource = dataSource;
+		jdbcTemplate = new JdbcTemplate(dataSource);
 	}
-
+	
 	@Override
 	public void addRecord(Audio audio) {
 		// TODO Auto-generated method stub
