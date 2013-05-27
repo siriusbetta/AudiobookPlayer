@@ -15,6 +15,17 @@ import web.audiobooks.models.Audio;
 public class StartController {
 	
 	/**
+	 * <p>Calling the main page</p>
+	 * @request main.htm
+	 * @param model ModelMap
+	 * @return main String 
+	 */
+	@RequestMapping("/main.htm")
+	public String main(ModelMap model){
+		return "main";
+	}
+	
+	/**
 	 * @param model
 	 * @return String The path to main.jsp
 	 */
