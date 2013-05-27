@@ -1,0 +1,15 @@
+@CHARSET "UTF-8";
+
+.body{
+	width: 100%;
+	height: 100%;
+	background-color: #ffffff;
+}
+
+.head{
+	background-color: #ffff00;
+}
+
+.login{
+	background-color: #fff000;
+}
