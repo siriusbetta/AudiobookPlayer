@@ -14,12 +14,25 @@
 </head>
 <body>
 	<div class = "body">
+		<div class = "head">head</div>
 		<div class = "background">
-			<div class = "head">head</div>
-			<div class = "login">login</div>
+			
+			<div class = "login">
+				<input class = "log" type = "text">
+				<input class = "pass" type = "text">
+				
+				<input class = "submit" type = "submit">
+				
+				<a  class = "link" href = "login.hmt">Registration</a>
+				
+			</div>
 			<div class = "welcomePicture">welcome pcteu</div>
-			<div class = "searchLine">saerch line</div>
+			<div class = "searchLine">saerch line
+			<input class = "searchLine" type = "searchText"></div>
+			<div class = "searchresult">search body</div>
+			
 		</div>
+	<div class = "footer">footer</div>
 	</div>
 </body>
 </html>
