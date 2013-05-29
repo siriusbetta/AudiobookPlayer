@@ -6,6 +6,11 @@
 	background-color: #ffffff;
 }
 
+.background{
+	width:800px;
+	height:50px;
+	background-color: #ff0000;
+}
 .head{
 	background-color: #ffff00;
 }
