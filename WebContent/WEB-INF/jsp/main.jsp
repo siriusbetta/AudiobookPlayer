@@ -9,10 +9,12 @@
 </head>
 <body>
 	<div class = "body">
-		<div class = "head">head</div>
-		<div class = "login">login</div>
-		<div class = "welcomePicture">welcome pcteu</div>
-		<div class = "searchLine">saerch line</div>
+		<div class = "background">
+			<div class = "head">head</div>
+			<div class = "login">login</div>
+			<div class = "welcomePicture">welcome pcteu</div>
+			<div class = "searchLine">saerch line</div>
+		</div>
 	</div>
 </body>
 </html>
