@@ -16,7 +16,7 @@
 	<div class = "body">
 		<div class = "head">head</div>
 		<div class = "background">
-			
+			<div class = "welcomePicture"></div>
 			<div class = "login">
 				<input class = "log" type = "text">
 				<input class = "pass" type = "text">
@@ -26,21 +26,21 @@
 				<a  class = "link" href = "login.hmt">Registration</a>
 				
 			</div>
-			<div class = "prop">prop</div>
-			<div class = "welcomePicture">welcome pcteu</div>
+			<div class = "prop"></div>
+			<div class = "welcomeLogo">Search and Listen what you want</div>
 			
 			<div class = "searchLineContainer">
 				<div class = "searchLine">
-					<input class = "searchLine" type = "text" size = "50">
+					<input class = "searchLineEdit" type = "text" size = "50">
 					<input class = "submitSearch" type = "submit">
 				</div>
 				
 			</div>
 			
-			<div class = "searchresult">search body</div>
+			<div class = "searchresult"></div>
 			
 		</div>
-	<div class = "footer">footer</div>
+	<div class = "footer"></div>
 	</div>
 </body>
 </html>
