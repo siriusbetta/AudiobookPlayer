@@ -26,9 +26,17 @@
 				<a  class = "link" href = "login.hmt">Registration</a>
 				
 			</div>
+			<div class = "prop">prop</div>
 			<div class = "welcomePicture">welcome pcteu</div>
-			<div class = "searchLine">saerch line
-			<input class = "searchLine" type = "searchText"></div>
+			
+			<div class = "searchLineContainer">
+				<div class = "searchLine">
+					<input class = "searchLine" type = "text" size = "50">
+					<input class = "submitSearch" type = "submit">
+				</div>
+				
+			</div>
+			
 			<div class = "searchresult">search body</div>
 			
 		</div>

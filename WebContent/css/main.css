@@ -49,9 +49,24 @@
 	margin-top:10px;
 	margin-left: 30px;
 }
+
+.prop{
+	clear: both;
+}
+.searchLineContainer{
+	position: relative;
+	
+}
+
+.searchLine{
+	position: absolute;
+	left:10%;
+	height: 30px;
+	
+}
 .searchresult{
 	margin-top:0px;
-	height:530px;
+	height:400px;
 	background-color: #800080;
 }
 .footer{
