@@ -7,10 +7,9 @@ import javax.sql.DataSource;
 import web.audiobooks.models.Audio;
 
 /***
- * 
+ * <p>The methods for operate with Audio data</p>
  * @author Aleksey
  * @category Interface
- * The methods for operate with Audio data
  * @see Audio
  * @see AudioTemplate
  */
