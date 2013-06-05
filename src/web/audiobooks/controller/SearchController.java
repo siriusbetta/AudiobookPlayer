@@ -2,7 +2,9 @@ package web.audiobooks.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import web.audiobooks.models.Query;
 
@@ -13,9 +15,9 @@ import web.audiobooks.models.Query;
  */
 @Controller
 public class SearchController {
-	@RequestMapping("/getQuery.htm")
-	public String getQuery(ModelMap model){
-		Query query = new Query();
+	@RequestMapping(value = "/getQuery.htm", method = RequestMethod.POST)
+	public String getQuery(@ModelAttribute ("query") Query query, ModelMap model){
+		//Query query = new Query();
 		model.addAttribute("query", query);
 		return "main";
 	}

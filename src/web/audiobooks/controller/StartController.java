@@ -5,6 +5,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import web.audiobooks.models.Audio;
+import web.audiobooks.models.Query;
 
 /**
  * @author Aleksey
@@ -22,6 +23,8 @@ public class StartController {
 	 */
 	@RequestMapping("/main.htm")
 	public String main(ModelMap model){
+		Query query = new Query();
+		model.addAttribute("query", query);
 		return "main";
 	}
 	

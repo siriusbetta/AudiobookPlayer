@@ -41,9 +41,12 @@
 				</div>
 				
 			</div>
-			</form:form>
-			<div class = "searchresult"></div>
 			
+			</form:form>
+			
+			<div class = "searchresult">
+				${query.query}
+			</div>
 		</div>
 	<div class = "footer"></div>
 	</div>
