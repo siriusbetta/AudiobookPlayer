@@ -40,4 +40,12 @@ public interface QueryDao {
 	 * @return List<Audio>
 	 */
 	public List<Audio> queryByQuery(String query);
+	
+	/**
+	 * <p>Search audio by key words</p>
+	 * @param queryKey
+	 * @return List<Audio>
+	 */
+	public List<Audio> queryByKey(String queryKey);
+	
 }
