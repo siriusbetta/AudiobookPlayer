@@ -29,14 +29,19 @@
 			<div class = "prop"></div>
 			<div class = "welcomeLogo">Search and Listen what you want</div>
 			
+			<!-- Query form -->
+			
+			<form:form method = "post" action = "/AudiobooksPlayer/getQuery.htm" commandName = "query">
 			<div class = "searchLineContainer">
 				<div class = "searchLine">
-					<input class = "searchLineEdit" type = "text" size = "50">
+					<form:input path="query" class = "searchLineEdit" size = "50"/>
+					<!--  <input class = "searchLineEdit" type = "text" size = "50"> -->
+					
 					<input class = "submitSearch" type = "submit">
 				</div>
 				
 			</div>
-			
+			</form:form>
 			<div class = "searchresult"></div>
 			
 		</div>
