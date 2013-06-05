@@ -1,6 +1,7 @@
 package web.audiobooks.data.template;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.sql.DataSource;
@@ -107,8 +108,9 @@ public class QueryTemplate implements QueryDao{
 		 * <p>Return parameter</p>
 		 * <p>List<String> words</p>
 		 */
-		List<String> words = null;
+		List<String> words = new ArrayList<String>();
 		
+		System.out.println(query);
 		/**
 		 * <p>Qurey is splitted by comma</p>
 		 * <p>String[] wordsComma</p>
@@ -118,12 +120,19 @@ public class QueryTemplate implements QueryDao{
 		 * <p>Qurey is splitted by space</p>
 		 * <p>String[] wordsSpace</p>
 		 */
+		for(String w: wordsComma){
+			System.out.println(w);
+		}
 		String[] wordSpace = null;
 		for (String word : wordsComma){
 			if(word.contains(" ")){
 				wordSpace = word.split(" ");
+				
 				for (String spaceWord : wordSpace){
-					words.add(spaceWord);
+					
+						words.add(spaceWord);
+						System.out.println(spaceWord);
+					
 				}
 			}else{
 				words.add(word);
