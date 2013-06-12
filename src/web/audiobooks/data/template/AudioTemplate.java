@@ -4,7 +4,9 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.PreparedStatementCreatorFactory;
 
 import web.audiobooks.data.dao.AudioDao;
 import web.audiobooks.data.mapper.AudioMapper;
@@ -85,12 +87,17 @@ public class AudioTemplate implements AudioDao{
 	 * @return Audio audio
 	 */
 	@Override
-	public Audio getRecord(String bookName) {
-		
-		String SQL = "SELECT * FROM audio WHERE bookName = ?";
-		Audio audio = jdbcTemplate.queryForObject(SQL,new  Object[]{bookName}, new AudioMapper());
+	public List<Audio> getRecord(String bookName) {
+		String SQL = "SELECT * FROM audio WHERE bookName LIKE ?";
+		List<Audio> audio = null;
+		try{
+			audio = jdbcTemplate.query(SQL, new AudioMapper(), new Object[]{'%'+ bookName + '%'});
+		} catch(EmptyResultDataAccessException e){
+			return null;
+		}
 		return audio;
 	}
+	
 
 	
 	/**

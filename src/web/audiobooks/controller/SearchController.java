@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import web.audiobooks.data.factory.QueryFactory;
+import web.audiobooks.data.template.AudioTemplate;
 import web.audiobooks.data.template.QueryTemplate;
+import web.audiobooks.models.Audio;
 import web.audiobooks.models.Query;
 
 /**
@@ -30,7 +32,7 @@ public class SearchController {
 	 * @value queryTemplate
 	 */
 	QueryTemplate queryTemplate = factory.querySearch();
-	
+	AudioTemplate audioTemplate = factory.queryAudio();
 	/**
 	 * 
 	 * @param query
@@ -41,15 +43,12 @@ public class SearchController {
 	@RequestMapping(value = "/getQuery.htm", method = RequestMethod.POST)
 	public String getQuery(@ModelAttribute ("query") Query query, ModelMap model){
 		//Query query = new Query();
-		List<String> answer = queryTemplate.splitQuery(query.getQuery());
+		//List<String> answer = queryTemplate.splitQuery(query.getQuery());
+		System.out.println(query.getQuery());
+		List<Audio> answer = audioTemplate.getRecord(query.getQuery());
 		
-		int counter = 1;
-		for(String i: answer){
-			System.out.println(counter +" ---- "+i);
-			counter++;
-		}
-		
-		model.addAttribute("query", query);
+				
+		model.addAttribute("answer", answer);
 		return "main";
 	}
 }

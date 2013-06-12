@@ -1,5 +1,8 @@
 package web.audiobooks.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +27,7 @@ public class StartController {
 	@RequestMapping("/main.htm")
 	public String main(ModelMap model){
 		Query query = new Query();
+		
 		model.addAttribute("query", query);
 		return "main";
 	}

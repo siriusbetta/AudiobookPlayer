@@ -38,7 +38,7 @@ public interface AudioDao {
 	 * @param String bookName
 	 * @return Audio audio
 	 */
-	public Audio getRecord(String bookName);
+	public List<Audio> getRecord(String bookName);
 	
 	/**
 	 * <p>Get List of Audio objects</p>

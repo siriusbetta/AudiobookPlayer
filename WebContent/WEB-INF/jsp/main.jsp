@@ -36,17 +36,24 @@
 				<div class = "searchLine">
 					<form:input path="query" class = "searchLineEdit" size = "50"/>
 					<!--  <input class = "searchLineEdit" type = "text" size = "50"> -->
-					
 					<input class = "submitSearch" type = "submit">
+					<div class = "checkBox">
+					
+						<form:checkbox path="checkAuthor" class = "checkBoxAuthor"/>
+						<form:label path="checkAuthor" class = "checkBoxAuthor">By author</form:label>
+						
+						<form:checkbox path="checkKeyWorb" class = "checkBoxKeyWorb"/>
+						<form:label path="checkKeyWorb" class = "checkBoxKeyWorb">By key worb</form:label>
+					</div>
 				</div>
 				
 			</div>
-			
+			<c:if test="${answer!= null }">
+				${fn:length(answer)}
+			</c:if>
 			</form:form>
 			
-			<div class = "searchresult">
-				${query.query}
-			</div>
+			
 		</div>
 	<div class = "footer"></div>
 	</div>

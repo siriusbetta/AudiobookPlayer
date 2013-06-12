@@ -81,6 +81,16 @@
 	
 	
 }
+.chechBox{
+	margin-top:20px;
+}
+.checkBoxAuthor{
+	
+	float:left;
+}
+.checkBoxKeyWorb{
+	float:left;
+}
 .searchresult{
 	margin-top:	150px;
 	margin-left: 130px;

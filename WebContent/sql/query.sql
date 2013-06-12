@@ -22,3 +22,5 @@ select * from test where body like '%drugs%';
 
 SELECT * FROM audio WHERE keyWords REGEXP 'new age|psih';
 select * from audio where keyWords like '%new age%';
+
+SELECT * FROM audio WHERE bookName LIKE '%Северный%';

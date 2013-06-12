@@ -45,7 +45,7 @@ public class QueryTemplate implements QueryDao{
 	 */
 	@Override
 	public List<Audio> queryName(String name) {
-		String SQL = "SELECT * FROM audio WHERE name LIKE '#?#'";
+		String SQL = "SELECT * FROM audio WHERE name LIKE '%?%'";
 		List<Audio> audioAnswer = null;
 		try{
 			audioAnswer = jdbcTemplate.query(SQL, new AudioMapper(), name);
