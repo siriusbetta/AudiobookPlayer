@@ -111,33 +111,23 @@ public class QueryTemplate implements QueryDao{
 		List<String> words = new ArrayList<String>();
 		
 		System.out.println(query);
-		/**
-		 * <p>Qurey is splitted by comma</p>
-		 * <p>String[] wordsComma</p>
-		 */
-		String[] wordsComma = query.split(",");
+		
+		
 		/**
 		 * <p>Qurey is splitted by space</p>
-		 * <p>String[] wordsSpace</p>
+		 * <p>String[] array</p>
 		 */
-		for(String w: wordsComma){
-			System.out.println(w);
-		}
-		String[] wordSpace = null;
-		for (String word : wordsComma){
-			if(word.contains(" ")){
-				wordSpace = word.split(" ");
-				
-				for (String spaceWord : wordSpace){
-					
-						words.add(spaceWord);
-						System.out.println(spaceWord);
-					
-				}
-			}else{
-				words.add(word);
+		
+		String[] array = query.split(" ");
+		String buf = " ";
+		
+		for (String word:array){
+				String wordMod = word.trim();
+				buf += wordMod + " ";
+				words.add(buf.trim());
 			}
-		}
+		
+		
 		return words;
 	}
 }
