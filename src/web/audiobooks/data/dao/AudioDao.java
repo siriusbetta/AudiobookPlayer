@@ -38,7 +38,7 @@ public interface AudioDao {
 	 * @param String bookName
 	 * @return Audio audio
 	 */
-	public List<Audio> getRecord(String bookName);
+	public List<Audio> getRecord(String bookName, int min, int max);
 	
 	/**
 	 * <p>Get List of Audio objects</p>
@@ -51,8 +51,15 @@ public interface AudioDao {
 	 * @param String authorName
 	 * @return List<Audio> audio
 	 */
-	public List<Audio> getRecordByAuthorName(String authorName);
+	public List<Audio> getRecordByAuthorName(String authorName, int min, int max);
 	
+	/**
+	 * <p>Get list of Audio objects by key word</p>
+	 * @param String keyWord
+	 * @return List<Audio> audio
+	 */
+	
+	public List<Audio> getRecordsByKeyWord(String keyWord, int min, int max);
 	/**
 	 * <p>Deletes record in database by audio ID</p>
 	 * @param Integer audioID

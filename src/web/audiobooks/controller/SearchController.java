@@ -1,5 +1,6 @@
 package web.audiobooks.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -42,12 +43,28 @@ public class SearchController {
 	
 	@RequestMapping(value = "/getQuery.htm", method = RequestMethod.POST)
 	public String getQuery(@ModelAttribute ("query") Query query, ModelMap model){
-		//Query query = new Query();
-		//List<String> answer = queryTemplate.splitQuery(query.getQuery());
-		System.out.println(query.getQuery());
-		List<Audio> answer = audioTemplate.getRecord(query.getQuery());
 		
-				
+		
+		List<Audio> answer = new ArrayList<Audio>();
+		
+		int min = 0;
+		int max = 10;
+		
+		if(query.isCheckAuthor()){
+			
+			answer = audioTemplate.getRecordByAuthorName(query.getQuery(), min, max);
+		
+		}
+		if(query.isCheckKeyWorb()){
+			
+			answer = audioTemplate.getRecordsByKeyWord(query.getQuery(), min, max);
+			
+		}
+		
+		if(!query.isCheckAuthor()&&!query.isCheckKeyWorb()){
+			
+			answer = audioTemplate.getRecord(query.getQuery(), min, max);
+		}
 		model.addAttribute("answer", answer);
 		return "main";
 	}

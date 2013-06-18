@@ -11,6 +11,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Listen audio books which you like</title>
 <link rel = "stylesheet" type = "text/css" href = "/AudiobooksPlayer/css/main.css">
+<script>
+function open_win(){
+	myWindow=window.open('','','width=200,height=100')
+	myWindow.document.write("<object type="application/x-shockwave-flash" data="player_mp3_multi.swf" width="200" height="20"><param name="movie" value="player_mp3_multi.swf" /><param name="FlashVars" value="mp3=test.mp3|test2.mp3" /></object>");
+	myWindow.focus()}
+</script>
 </head>
 <body>
 	<div class = "body">
@@ -43,19 +49,53 @@
 						<form:label path="checkAuthor" class = "checkBoxAuthor">By author</form:label>
 						
 						<form:checkbox path="checkKeyWorb" class = "checkBoxKeyWorb"/>
-						<form:label path="checkKeyWorb" class = "checkBoxKeyWorb">By key worb</form:label>
+						<form:label path="checkKeyWorb" class = "checkBoxKeyWorb">By key word</form:label>
 					</div>
 				</div>
 				
+				
 			</div>
-			<c:if test="${answer!= null }">
-				${fn:length(answer)}
-			</c:if>
 			</form:form>
 			
+			<div class = "searchresult">
+						
+						<c:choose>
+						<c:when test="${answer!= null }">
+						<c:set var = "playlist" value = ""></c:set>
+						<c:forEach items = "${answer}" var = "item">
+						<c:set var = "playlist" value = "${playlist}|${item.path}"></c:set>
+												
+						<div class = "showResult">
+						<input type="checkbox" class = "playItem"><p>${item.author} - ${item.bookName}</p>
+						
+						<object class = "audioControls" type="application/x-shockwave-flash" data="/AudiobooksPlayer/player/player_mp3_maxi.swf" width="200" height="20">
+     						<param name="movie" value="player_mp3_maxi.swf" />
+     						<param name="FlashVars" value="mp3=/AudiobooksPlayer/audio/${item.path}&showinfo=1&showvolume=1" />
+						</object>
+						<div class = "button"><button>add</button></div>
+						</div>
+						</c:forEach> 
+						
+						<div class = "playAll"><input type="button" value="Play all" onclick="window.open('playlist ${playlist}.htm', 'newwindow', 'width=300, height=250');"></div>
+						</c:when>
+						
+						
+						
+						<c:otherwise >
+							<p>Nothing was found</p>
+						</c:otherwise>
+						</c:choose>
+					</div>
+				</div>
 			
-		</div>
-	<div class = "footer"></div>
+			
+			
+		
+	<div class = "footer">
+	
+		<p class = "copyright">Copyright Alexey</p>
 	</div>
+	</div>
+	
 </body>
 </html>

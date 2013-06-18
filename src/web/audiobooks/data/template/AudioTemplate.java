@@ -87,11 +87,12 @@ public class AudioTemplate implements AudioDao{
 	 * @return Audio audio
 	 */
 	@Override
-	public List<Audio> getRecord(String bookName) {
-		String SQL = "SELECT * FROM audio WHERE bookName LIKE ?";
+	public List<Audio> getRecord(String bookName, int min, int max) {
+		String SQL = "SELECT * FROM audio WHERE bookName LIKE ? LIMIT ?, ?";
 		List<Audio> audio = null;
 		try{
-			audio = jdbcTemplate.query(SQL, new AudioMapper(), new Object[]{'%'+ bookName + '%'});
+			audio = jdbcTemplate.query(SQL, new AudioMapper(), new Object[]{'%'+ bookName + '%', min, max});
+			
 		} catch(EmptyResultDataAccessException e){
 			return null;
 		}
@@ -117,12 +118,33 @@ public class AudioTemplate implements AudioDao{
 	 * @return List of Audio audio
 	 */
 	@Override
-	public List<Audio> getRecordByAuthorName(String authorName) {
-		String SQL = "SELECT * FROM audio WHERE author = ?";
-		List<Audio> audio = jdbcTemplate.query(SQL, new AudioMapper(), authorName);
-		return audio;
+	public List<Audio> getRecordByAuthorName(String authorName, int min, int max) {
+		String SQL = "SELECT * FROM audio WHERE author LIKE ? LIMIT ?, ?";// 
+		try{
+			List<Audio> audio = jdbcTemplate.query(SQL, new AudioMapper(), new Object[]{'%'+authorName+'%', min, max});//
+			return audio;
+		}
+		catch(EmptyResultDataAccessException e){
+			return null;
+		}
+		
 	}
 
+	/**
+	 * <p>Get records from database by key word</p>
+	 * @return List of Audio audio
+	 */
+	@Override
+	public List<Audio> getRecordsByKeyWord(String keyWord, int min, int max){
+		String SQL = "SELECT * FROM audio WHERE keyWords LIKE ? LIMIT ?, ?";// 
+		try{
+			List<Audio> audio = jdbcTemplate.query(SQL, new AudioMapper(), new Object[]{'%'+keyWord+'%', min, max});//
+			return audio;
+		}
+		catch(EmptyResultDataAccessException e){
+			return null;
+		}
+	}
 	
 	/**
 	 * <p>Delete record from audio by audio ID</p>
